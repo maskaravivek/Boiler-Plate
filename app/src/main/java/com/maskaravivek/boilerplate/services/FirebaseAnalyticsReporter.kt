@@ -10,13 +10,9 @@ import javax.inject.Singleton
 class FirebaseAnalyticsReporter @Inject
 constructor(context: Context) {
 
-    private val firebaseAnalytics: FirebaseAnalytics
+    private val firebaseAnalytics: FirebaseAnalytics = FirebaseAnalytics.getInstance(context)
 
-    init {
-        firebaseAnalytics = FirebaseAnalytics.getInstance(context)
-    }
-
-    fun setUserIdentifiers(userId: String, corpId: String) {
+    fun setUserIdentifiers(userId: String) {
         firebaseAnalytics.setUserProperty("userId", userId)
     }
 
