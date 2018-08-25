@@ -1,6 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    ext.kotlin_version = '1.2.61'
     ext.kotlin_version = '1.2.31'
     repositories {
         google()
@@ -45,4 +46,38 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext.lint_options = {
+    disable 'InvalidPackage' //butterKnife
+    disable 'RequiredSize' // https://issuetracker.google.com/issues/37138580
+    warning 'GradleCompatible' //it's causing problems in integrating firebase perf.
+}
+
+ext.compile_options = {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}
+
+ext.test_options = {
+    unitTests.returnDefaultValues = true
+}
+
+ext.android_settings_for_module = {
+    compileSdkVersion COMPIlE_SDK_VERSION.toInteger()
+    buildToolsVersion BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 27
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+        }
+    }
+    compileOptions compile_options
+    lintOptions lint_options
+    testOptions test_options
 }

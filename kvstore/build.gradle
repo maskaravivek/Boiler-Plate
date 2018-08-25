@@ -1,0 +1,14 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android android_settings_for_module
+dependencies {
+    api common_libs
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
+android {}
+repositories {
+    mavenCentral()
+    google()
+}
