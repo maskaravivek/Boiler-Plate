@@ -33,23 +33,23 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.0.2'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
 
     implementation 'com.facebook.stetho:stetho:1.5.0'
-    implementation 'com.google.firebase:firebase-core:16.0.0'
-    implementation 'com.google.firebase:firebase-perf:16.0.0'
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-perf:16.1.0'
     implementation 'com.google.firebase:firebase-ads:15.0.1'
-    implementation 'com.google.firebase:firebase-messaging:17.1.0'
+    implementation 'com.google.firebase:firebase-messaging:17.3.0'
 
     implementation 'com.github.medyo:android-about-page:1.2.4'
     implementation 'com.codemybrainsout.rating:ratingdialog:1.0.8'
 
-    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
     // Because RxAndroid releases are few and far between, it is recommended you also
     // explicitly depend on RxJava's latest version for bug fixes and new features.
     implementation 'com.android.support:multidex:1.0.3'
 
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.14'
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     implementation 'com.jakewharton.rxbinding2:rxbinding-support-v4:2.0.0'
     implementation 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0'
@@ -60,11 +60,11 @@ dependencies {
     implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
 
     // Room components
-    implementation "android.arch.persistence.room:runtime:1.1.0"
-    kapt "android.arch.persistence.room:compiler:1.1.0"
-    androidTestImplementation "android.arch.persistence.room:testing:1.1.0"
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    kapt "android.arch.persistence.room:compiler:1.1.1"
+    androidTestImplementation "android.arch.persistence.room:testing:1.1.1"
 
-    implementation "android.arch.persistence.room:rxjava2:1.1.0"
+    implementation "android.arch.persistence.room:rxjava2:1.1.1"
 
     // Lifecycle components
     implementation "android.arch.lifecycle:extensions:1.1.1"
