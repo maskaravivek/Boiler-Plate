@@ -2,16 +2,17 @@ package com.maskaravivek.boilerplate.di
 
 import android.app.Application
 import android.content.Context
+import com.maskaravivek.media.AwsModule
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
-@Module
+@Module(includes = [AwsModule::class])
 class AppModule {
 
     @Provides
     @Singleton
-    internal fun provideContext(application: Application): Context {
+    fun provideContext(application: Application): Context {
         return application
     }
 }

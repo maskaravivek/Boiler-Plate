@@ -1,1 +1,1 @@
-include ':app', ':kvstore'
+include ':app', ':kvstore', ':media', ':utils', ':network'

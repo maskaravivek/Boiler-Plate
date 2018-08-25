@@ -17,12 +17,12 @@ constructor(context: Context) {
     }
 
     fun logEvent(eventName: String, bundle: Bundle?) {
-        var bundle = bundle
-        if (bundle == null) {
-            bundle = Bundle()
+        var attributes = bundle
+        if (attributes == null) {
+            attributes = Bundle()
         }
 
-        firebaseAnalytics.logEvent(eventName, bundle)
+        firebaseAnalytics.logEvent(eventName, attributes)
     }
 
     fun logEvent(eventName: String) {

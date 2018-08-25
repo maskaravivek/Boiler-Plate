@@ -3,6 +3,8 @@ package com.maskaravivek.boilerplate
 import android.app.Activity
 import android.app.Application
 import android.app.Service
+import android.content.Context
+import android.support.multidex.MultiDex
 import android.support.v4.app.Fragment
 import com.facebook.stetho.Stetho
 import com.maskaravivek.boilerplate.di.AppComponent
@@ -40,6 +42,11 @@ class BoilerPlateApplication : Application(), HasActivityInjector, HasServiceInj
             Timber.plant(Timber.DebugTree())
         }
         getAppComponent().inject(this)
+    }
+
+    override fun attachBaseContext(base: Context) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
     }
 
     fun getAppComponent(): AppComponent {

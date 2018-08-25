@@ -8,12 +8,14 @@ import java.io.IOException
 class FileUtils {
     companion object {
         fun getOrCreateFolder(folderName: String): File {
-            val file = File(Environment.getExternalStorageDirectory(), folderName)
+            val file = File(getExternalStorageDir(), folderName)
             if (!file.exists()) {
                 file.mkdirs()
             }
             return file
         }
+
+        private fun getExternalStorageDir() = Environment.getExternalStorageDirectory()
 
         @Throws(IOException::class)
         fun getOrCreateFile(directory: String, fileName: String): File {
@@ -25,8 +27,22 @@ class FileUtils {
         }
 
         @Throws(IOException::class)
+        fun getOrCreateFile(fileName: String): File {
+            val file = File(getExternalStorageDir(), fileName)
+            if (!file.exists()) {
+                file.createNewFile()
+            }
+            return file
+        }
+
+        @Throws(IOException::class)
         fun getFile(directory: String, fileName: String): File {
             return File(getOrCreateFolder(directory), fileName)
+        }
+
+        @Throws(IOException::class)
+        fun getFile(fileName: String): File {
+            return File(getExternalStorageDir(), fileName)
         }
 
         fun deleteFile(file: File): Boolean {
