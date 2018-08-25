@@ -33,5 +33,4 @@ The project has the following modules already setup:
 - Url utils to handle web urls
 - View utils to display toast messages
 - Basic file utils
-- 
 
